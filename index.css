@@ -1290,4 +1290,34 @@ section {
     font-size: 2rem;
   }
 }
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: whatsPulse 2s infinite;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+.whats-icon {
+    font-size: 1.2rem;
+}
+
+@keyframes whatsPulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.03);}
+    100% { transform: scale(1);}
+}
+
 
