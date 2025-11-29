@@ -20,11 +20,26 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Stylesheet -->
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="index.css">
 
-    <!-- Botões Flutuantes: CSS Adicional -->
+    <!-- =====================
+         CSS Ajustes Botões Flutuantes e Mobile
+         ===================== -->
     <style>
+        /* Evitar scroll horizontal no mobile */
+        html, body {
+            overflow-x: hidden;
+        }
+
+        /* Containers principais responsivos */
+        .container {
+            max-width: 100%;
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
         /* Botão WhatsApp Flutuante */
         .floating-whatsapp {
             position: fixed !important;
@@ -38,34 +53,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             text-decoration: none;
             transition: transform 0.3s;
         }
 
         .floating-whatsapp:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.6);
         }
 
         .floating-whatsapp svg {
             width: 32px;
             height: 32px;
             fill: white !important;
-        }
-
-        @media (max-width: 768px) {
-            .floating-whatsapp {
-                bottom: 90px; /* sobe acima do back-to-top */
-                right: 20px;
-                width: 50px;
-                height: 50px;
-            }
-
-            .floating-whatsapp svg {
-                width: 26px;
-                height: 26px;
-            }
         }
 
         /* Botão Back-to-Top */
@@ -91,23 +92,39 @@
             background-color: #555;
         }
 
+        /* Responsividade mobile */
         @media (max-width: 768px) {
+            .floating-whatsapp {
+                bottom: 90px; /* sobe acima do back-to-top */
+                right: 15px; /* mais próximo da borda */
+                width: 50px;
+                height: 50px;
+            }
+
+            .floating-whatsapp svg {
+                width: 26px;
+                height: 26px;
+            }
+
             .back-to-top {
                 bottom: 20px;
-                right: 20px;
+                right: 15px;
                 width: 45px;
                 height: 45px;
                 font-size: 1.2rem;
             }
         }
+
+        /* Garantir que imagens e vídeos não ultrapassem a tela */
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
-
 <body>
- <!-- =====================
-         Conteúdo do site
-         ===================== -->
+    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#home" class="logo">
@@ -135,21 +152,17 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Advocacia de Excelência</h1>
-            <p class="hero-subtitle"> Anos de experiência defendendo seus interesses com dedicação e
-                profissionalismo.</p>
+            <p class="hero-subtitle">Anos de experiência defendendo seus interesses com dedicação e profissionalismo.</p>
             <div class="hero-buttons">
-                <button class="btn-primary"
-                    onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
                     Agende uma Consulta
                 </button>
-                <button class="btn-secondary"
-                    onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                <button class="btn-secondary" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
                     Dr. Rubens E. A. Gomes
                 </button>
             </div>
         </div>
     </section>
-
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
@@ -402,7 +415,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2025 ANDRADE GOMES - Advocacia. Todos os direitos reservados.</p>
             <div class="footer-links">
@@ -437,7 +450,7 @@
 	<!-- =====================
          Botões Flutuantes
          ===================== -->
-    <!-- WhatsApp -->
+   <!-- WhatsApp -->
     <a href="https://wa.me/5542999119127?text=Olá,%20gostaria%20de%20falar%20sobre atendimento jurídico."
         target="_blank" class="floating-whatsapp" aria-label="Chamar no WhatsApp">
         <svg class="whats-icon" viewBox="0 0 32 32" aria-hidden="true">
@@ -469,8 +482,4 @@
     </script>
 
 </body>
-</html>
-</body>
-
-
 </html>
