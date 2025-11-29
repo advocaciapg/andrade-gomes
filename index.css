@@ -1324,14 +1324,14 @@ section {
     BOTÃO FLUTUANTE WHATSAPP
     ============================================ */
 .floating-whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999;
+    position: fixed !important;  /* garante que fique fixo */
+    bottom: 30px !important;
+    right: 30px !important;
+    z-index: 9999 !important;    /* acima de tudo */
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #25D366;
+    background-color: #25D366 !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1348,16 +1348,16 @@ section {
 .floating-whatsapp .whats-icon {
     width: 32px;
     height: 32px;
-    fill: white;
+    fill: white !important;  /* força a cor no PC */
 }
 
-/* Responsividade */
+/* Responsividade mobile */
 @media (max-width: 768px) {
     .floating-whatsapp {
+        bottom: 20px !important;
+        right: 15px !important;
         width: 50px;
         height: 50px;
-        bottom: 20px;
-        right: 15px;
     }
     .floating-whatsapp .whats-icon {
         width: 26px;
